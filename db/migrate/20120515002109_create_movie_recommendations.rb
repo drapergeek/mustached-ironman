@@ -3,6 +3,7 @@ class CreateMovieRecommendations < ActiveRecord::Migration
     create_table :movie_recommendations do |t|
       t.references :movie
       t.references :recommending_user
+      t.integer :vote_count, default: 0
 
       t.timestamps
     end

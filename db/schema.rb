@@ -16,8 +16,9 @@ ActiveRecord::Schema.define(:version => 20120515002257) do
   create_table "movie_recommendations", :force => true do |t|
     t.integer  "movie_id"
     t.integer  "recommending_user_id"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.integer  "vote_count",           :default => 0
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
   end
 
   add_index "movie_recommendations", ["movie_id"], :name => "index_movie_recommendations_on_movie_id"

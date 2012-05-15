@@ -3,6 +3,5 @@
 FactoryGirl.define do
   factory :movie_recommendation do
     movie
-    recommending_user_id nil
   end
 end

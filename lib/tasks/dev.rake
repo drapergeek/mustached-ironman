@@ -13,11 +13,10 @@ namespace :app do
       require 'factory_girl_rails'
 
       Rake::Task['db:seed'].execute
-
-      FactoryGirl.create(:item, :name => "Ruby 1.9 Pickaxe")
-      FactoryGirl.create(:item, :name => "VIM Screencast")
-      FactoryGirl.create(:item, :name => "tmux Video")
-      FactoryGirl.create(:item, :name => "The rspec book")
+      ["Iron Man", "The Avengers", "X-Men", "Batman", "Great Escape"].each do |name|
+        movie = Factory.create(:movie, name: name, description: "Great movie")
+        Factory.create(:movie_recommendation, movie: movie, vote_count: 10)
+      end
 
       puts "Development enviroment seeded with data"
 

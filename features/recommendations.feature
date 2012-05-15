@@ -4,11 +4,15 @@ Feature: Movie recommendations
   So he can watch them
 
   Scenario: View recommended movies
-    Given the following movies recommendations exist:
-      | name | vote_count |
-      | Iron Man | 5 |
-      | Shawshank Redepemption | 10 |
-      | The Dark Knight | 12 |
+    Given the following movie recommendations exist:
+      | movie                        | vote_count |
+      | name: Iron Man               | 5          |
+      | name: Shawshank Redepemption | 10         |
+      | name: The Dark Knight        | 12         |
     When I go to the home page
-    Then I should see the following movies with links
+    Then I should see the following movies with links:
+      | movie                        |
+      | name: Iron Man               |
+      | name: Shawshank Redepemption |
+      | name: The Dark Knight        |
 
