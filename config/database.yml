@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: mustached-ironman_development
   pool: 5
-  username: mustached-ironman
+  username: draper
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -43,7 +43,7 @@ test: &test
   encoding: unicode
   database: mustached-ironman_test
   pool: 5
-  username: mustached-ironman
+  username: draper
   password:
 
 production:
@@ -51,7 +51,7 @@ production:
   encoding: unicode
   database: mustached-ironman_production
   pool: 5
-  username: mustached-ironman
+  username: draper
   password:
 
 cucumber:
