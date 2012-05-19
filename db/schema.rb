@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120519175213) do
+ActiveRecord::Schema.define(:version => 20120519185835) do
 
   create_table "movie_recommendations", :force => true do |t|
     t.integer  "movie_id"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20120519175213) do
     t.integer  "vote_count",           :default => 0
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
+    t.integer  "recommendee_id"
+    t.integer  "recommender_id"
   end
 
   add_index "movie_recommendations", ["movie_id"], :name => "index_movie_recommendations_on_movie_id"
