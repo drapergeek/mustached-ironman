@@ -11,6 +11,6 @@ describe User do
                                          recommender: from_user,
                                          recommendee: to_user)
     from_user.from_me.should == [recommendation]
-    to_user.to_me.should == [recommendation]
+    to_user.for_me.should == [recommendation]
   end
 end
