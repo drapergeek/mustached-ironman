@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 gem 'pg'
 gem "haml-rails"
+gem "devise"
 
 
 group :assets do
@@ -22,7 +23,7 @@ group :development, :test do
   gem 'cucumber-rails', :require => false
   gem 'factory_girl_rails'
   gem 'spork'
-  gem 'shoulda'
+  gem 'shoulda-matchers'
   gem 'mocha'
   gem 'pry'
   gem 'database_cleaner'
