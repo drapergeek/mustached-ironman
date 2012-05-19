@@ -13,4 +13,15 @@ describe User do
     from_user.from_me.should == [recommendation]
     to_user.for_me.should == [recommendation]
   end
+
+  it "#friends returns all other users" do
+    other_users = create_list(:user, 5)
+    user = create(:user)
+    user.friends.should == other_users
+  end
+
+  it "shows the email for to_s" do
+    user = build_stubbed(:user)
+    user.to_s.should == user.email
+  end
 end

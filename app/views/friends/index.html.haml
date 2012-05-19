@@ -1,0 +1,3 @@
+%ul.friends
+  - @friends.each do |user|
+    = link_to user, friend_path(user)
