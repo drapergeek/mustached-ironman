@@ -1,0 +1,3 @@
+%ul.recommendations
+  -@recommendations.each do |recommendation|
+    %li.recommendation=link_to recommendation.name, recommendation
