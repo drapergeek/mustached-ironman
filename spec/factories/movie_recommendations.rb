@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :movie_recommendation do
-    movie
+    movie_name "Old Yellar"
   end
 end

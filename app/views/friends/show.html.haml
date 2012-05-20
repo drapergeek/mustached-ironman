@@ -1,3 +1,7 @@
 %ul.recommendations
   -@recommendations.each do |recommendation|
-    %li.recommendation=link_to recommendation.name, recommendation
+    %li.recommendation= link_to recommendation.name, recommendation
+=simple_form_for @recommendation do |f|
+  =f.input :movie_name
+  =f.input :recommendee_id, as: :hidden
+  =f.submit "Add recommendation"

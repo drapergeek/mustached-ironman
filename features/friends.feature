@@ -20,3 +20,13 @@ Feature: Interact with other users
       | name        |
       | Iron Man    |
       | The Goonies |
+
+  Scenario: Add a recommendation for a friend
+    Given a user "sam@example.com" with 5 recommendations
+    Given I am signed in as "person@example.com"
+    When I visit my friends page
+    And I click the "sam@example.com" link
+    And I fill in "Men In Black" for a movie recommendation
+    And I click the "Add recommendation" button
+    Then I should see "Men In Black" in his recommendations
+    And I should see "You have added Men In Black"

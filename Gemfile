@@ -4,6 +4,7 @@ gem 'rails', '3.2.3'
 gem 'pg'
 gem "haml-rails"
 gem "devise"
+gem 'simple_form'
 
 
 group :assets do

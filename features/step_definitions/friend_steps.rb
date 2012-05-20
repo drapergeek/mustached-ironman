@@ -11,8 +11,7 @@ end
 Given /^a user "(.*?)" has the following recommendations:$/ do |email, table|
   user = create(:user, email: email)
   table.hashes.each do |hash|
-    movie = create(:movie, name: hash[:name])
-    create(:movie_recommendation, recommendee: user, movie: movie)
+    create(:movie_recommendation, recommendee: user, movie_name: hash[:name])
   end
 end
 
@@ -24,4 +23,24 @@ Then /^I should see his recommendations as:$/ do |table|
   end
 end
 
+Given /^a user "(.*?)" with (\d+) recommendations$/ do |email, number|
+  user = create(:user, email:email)
+  number.to_i.times do
+    create(:movie_recommendation, recommendee: user)
+  end
+end
+
+When /^I fill in "(.*?)" for a movie recommendation$/ do |movie_name|
+  fill_in "name", with: movie_name
+end
+
+Then /^I should see "(.*?)" in his recommendations$/ do |link_name|
+  within ".recommendations" do
+    page.should have_link link_name
+  end
+end
+
+Then /^I should see "(.*?)"$/ do |text|
+  page.should have_content text
+end
 

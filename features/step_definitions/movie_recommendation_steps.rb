@@ -12,8 +12,7 @@ end
 
 Given /^the following movie recommendations are created:$/ do |table|
   table.hashes.each do |hash|
-    recommendation = build(:movie_recommendation)
-    recommendation.movie = create(:movie, name: hash[:movie])
+    recommendation = build(:movie_recommendation, movie_name: hash[:movie])
     recommendation.recommender = User.find_by_email(hash[:recommender])
     recommendation.recommendee = User.find_by_email(hash[:recommendee])
     recommendation.save
