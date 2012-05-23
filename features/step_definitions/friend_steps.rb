@@ -44,3 +44,13 @@ Then /^I should see "(.*?)"$/ do |text|
   page.should have_content text
 end
 
+Then /^I should see the following movies:$/ do |table|
+  table.hashes.each do |hash|
+    page.should have_content hash[:name]
+  end
+end
+
+When /^I select "(.*?)"$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+

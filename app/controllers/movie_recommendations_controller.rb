@@ -8,8 +8,11 @@ class MovieRecommendationsController < ApplicationController
     @recommendations = MovieRecommendation.all
   end
 
+  def new
+  end
+
   def create
-    @recommendation = current_user.from_me.new(params[:movie_recommendation])
+    @recommendation = current_user.from_me.new
     if @recommendation.save
       redirect_to friend_path(@recommendation.recommendee), notice: "You have added #{@recommendation.name}"
     end

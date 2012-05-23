@@ -17,6 +17,16 @@ Spork.prefork do
 
   Cucumber::Rails::Database.javascript_strategy = :truncation
   World FactoryGirl::Syntax::Methods
+
+  VCR.configure do |c|
+    c.cassette_library_dir = 'features/vcr_cassettes'
+    c.hook_into :fakeweb
+    c.allow_http_connections_when_no_cassette = true
+  end
+
+  VCR.cucumber_tags do |t|
+    t.tag '@imdb'
+  end
 end
 
 Spork.each_run do

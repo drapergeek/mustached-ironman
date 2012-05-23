@@ -21,6 +21,7 @@ Feature: Interact with other users
       | Iron Man    |
       | The Goonies |
 
+  @imdb
   Scenario: Add a recommendation for a friend
     Given a user "sam@example.com" with 5 recommendations
     Given I am signed in as "person@example.com"
@@ -28,5 +29,11 @@ Feature: Interact with other users
     And I click the "sam@example.com" link
     And I fill in "Men In Black" for a movie recommendation
     And I click the "Add recommendation" button
+    Then I should see the following movies:
+      | name             |
+      | Men in Black     |
+      | Men in Black II  |
+      | Men in Black III |
+    When I select "Men In Black"
     Then I should see "Men In Black" in his recommendations
     And I should see "You have added Men In Black"

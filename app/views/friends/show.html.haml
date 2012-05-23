@@ -1,7 +1,6 @@
 %ul.recommendations
   -@recommendations.each do |recommendation|
-    %li.recommendation= link_to recommendation.name, recommendation
-=simple_form_for @recommendation do |f|
+    %li.recommendation=link_to recommendation.name, recommendation
+=simple_form_for :search, url: new_movie_search_path , method: :get do |f|
   =f.input :movie_name
-  =f.input :recommendee_id, as: :hidden
   =f.submit "Add recommendation"

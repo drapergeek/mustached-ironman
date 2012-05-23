@@ -1,0 +1,6 @@
+-@movies[0..5].each do |movie|
+  .movie[movie]
+    %h3.movie_title=movie.title
+    -if movie.poster.present?
+      =image_tag movie.poster, size: '100x155'
+    =button_to "Add Recommendation", movie_recommendations_path(id: movie.id)
