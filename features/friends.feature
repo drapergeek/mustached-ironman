@@ -34,6 +34,6 @@ Feature: Interact with other users
       | Men in Black     |
       | Men in Black II  |
       | Men in Black III |
-    When I select "Men In Black"
+    When I select Men In Black
     Then I should see "Men In Black" in his recommendations
     And I should see "You have added Men In Black"

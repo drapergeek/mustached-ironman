@@ -8,6 +8,7 @@ gem 'simple_form'
 gem 'imdb'
 gem 'vcr'
 gem 'fakeweb'
+gem 'httparty'
 
 
 group :assets do

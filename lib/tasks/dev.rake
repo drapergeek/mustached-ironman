@@ -18,8 +18,11 @@ namespace :app do
         Factory.create(:movie_recommendation, movie: movie, vote_count: 10)
       end
 
-      puts "Development enviroment seeded with data"
+      ["steve", "bob", "sam", "sarah", "jennifer"].each do |name|
+        Factory.create(:user, email: "#{name}@example.com")
+      end
 
+      puts "Development enviroment seeded with data"
     end
   end
 end

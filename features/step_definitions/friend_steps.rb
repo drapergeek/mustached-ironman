@@ -50,7 +50,6 @@ Then /^I should see the following movies:$/ do |table|
   end
 end
 
-When /^I select "(.*?)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
+When "I select Men In Black" do
 
+end
